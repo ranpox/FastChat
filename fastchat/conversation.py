@@ -980,6 +980,18 @@ register_conv_template(
     )
 )
 
+register_conv_template(
+    Conversation(
+        name="lemur-chat",
+        system_template="""<|im_start|>system
+{system_message}""",
+        roles=("<|im_start|>user", "<|im_start|>assistant"),
+        sep_style=SeparatorStyle.CHATML,
+        sep="<|im_end|>",
+        stop_token_ids=[32002, 32004],
+    )
+)
+
 
 if __name__ == "__main__":
     print("Vicuna template:")
